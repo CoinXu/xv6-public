@@ -1,0 +1,30 @@
+{
+    "version": "2.0.0",
+    "options": {
+        "cwd": "${workspaceRoot}"
+    },
+    "tasks": [
+        {
+            "label": "xv6 qemu-gdb",
+            "type": "shell",
+            "isBackground": true,
+            "command": "make qemu-gdb",
+            "problemMatcher": {
+                "pattern": {
+                    "regexp": ".",
+                    "file": 1,
+                    "location": 2,
+                    "message": 3
+                },
+                "background": {
+                    "beginsPattern": "*** Now run 'gdb'.",
+                    "endsPattern": "."
+                }
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
